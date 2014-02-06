@@ -4,11 +4,13 @@ var express = require('express')
   , server = http.createServer(app)
 	, io = require('socket.io').listen(server)
 
+var client_welcome_path = "/Users/socurites/Works/GitHub/kmongky-talky";
+
 server.listen(8080);
 
 // 라우팅 
 app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/index.html');
+  res.sendfile(client_welcome_path + '/client/index.html');
 });
 
 // 이 채팅 서버에 현재 접속한 사용자명을 저장할 변수
